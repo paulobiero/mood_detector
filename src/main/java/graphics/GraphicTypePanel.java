@@ -13,7 +13,7 @@ public class GraphicTypePanel extends JPanel
     public GraphicTypePanel(GraphicPanel graphicPanel, ReentrantLock recogParamChangesLock)
     {
         // Graphic type box
-        graphicTypeBox = new JComboBox(new String[]{"dB", "Real"});
+        graphicTypeBox = new JComboBox(new String[]{"dB", "Real"});;
         graphicTypeBox.addActionListener(new GraphicTypeBoxListener(graphicPanel, recogParamChangesLock));
         graphicTypeBox.setPreferredSize(new Dimension(60, 23));
 
