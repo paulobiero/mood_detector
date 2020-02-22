@@ -1,7 +1,7 @@
-package main.java.graphics.actionListeners;
+package graphics.actionListeners;
 
-import main.java.graphics.ControlPanel;
-import main.java.processing.RecognitionMachine;
+import graphics.ControlPanel;
+import processing.RecognitionMachine;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -19,6 +19,7 @@ public class SaveMenuItemListener implements ActionListener
         this.recogMachine = recogMachine;
         this.controlPanel = controlPanel;
     }
+
 
 
 

@@ -1,20 +1,19 @@
-package main.java.processing;
+package processing;
 
-import main.java.graphics.GraphicPanel;
-import main.java.graphics.NotesPanel;
-import main.java.processing.windowFunctions.HammingWindow;
-import main.java.processing.windowFunctions.HannWindow;
+import graphics.GraphicPanel;
+import graphics.NotesPanel;
+
 import main.java.processing.windowFunctions.IWindowFunction;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.locks.ReentrantLock;
-
+import processing.windowFunctions.HammingWindow;
+import processing.windowFunctions.HannWindow;
 
 import javax.sound.midi.*;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class RecognitionMachine
 {
@@ -31,7 +30,7 @@ public class RecognitionMachine
     private double                           spikeFactor;
     private int                              minNoteDuration; // Each window = 1 tick
 
-    private WaveFile                         wf;
+    private main.java.processing.WaveFile wf;
     private int                              sampleRate;
     private int                              framesCount;
     private int                              sampleSize;
@@ -70,6 +69,7 @@ public class RecognitionMachine
         endCode = 119; // Java code of B8
         this.recogParamChangesLock = recogParamChangesLock;
     }
+
 
 
 
@@ -248,7 +248,7 @@ public class RecognitionMachine
         freq.clear();
         freq.addAll(counts);
 
-        FastFourierTransform.FFT(freq, false);
+       FastFourierTransform.FFT(freq, false);
     }
 
     private boolean checkForThresholdUp(Note n, ArrayList<Complex> freq, double threshold)
@@ -340,7 +340,7 @@ public class RecognitionMachine
     {
         if (wf != null)
             wf.getClip().close();
-        wf = new WaveFile(new File(filePath)); // Throws exception if unknown file
+        wf = new main.java.processing.WaveFile(new File(filePath)); // Throws exception if unknown file
         sampleRate = wf.getSampleRate();
         framesCount = (int)wf.getFramesCount(); // (!) Might not fit the integer. (!)
         sampleSize = wf.getSampleSize();

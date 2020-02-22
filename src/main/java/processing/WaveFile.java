@@ -2,6 +2,7 @@ package main.java.processing;
 
 /* Author: http://blog.eqlbin.ru/2011/02/wave-java.html */
 
+import javax.sound.sampled.*;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +10,6 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import javax.sound.sampled.*;
 
 public class WaveFile {
     public final int         NOT_SPECIFIED = AudioSystem.NOT_SPECIFIED; // -1
@@ -32,7 +32,7 @@ public class WaveFile {
      * @throws UnsupportedAudioFileException
      * @throws IOException
      */
-    WaveFile(File file) throws UnsupportedAudioFileException, IOException
+    public WaveFile(File file) throws UnsupportedAudioFileException, IOException
     {
         if(!file.exists()) {
             throw new FileNotFoundException(file.getAbsolutePath());

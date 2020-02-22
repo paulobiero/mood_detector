@@ -1,11 +1,14 @@
-package main.java.graphics;
+package graphics;
 
-import main.java.graphics.actionListeners.*;
-import main.java.processing.RecognitionMachine;
+import graphics.actionListeners.StopBtnListener;
+import processing.RecognitionMachine;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
 
 public class ControlPanel extends JPanel
@@ -52,7 +55,7 @@ public class ControlPanel extends JPanel
         windowFunctionLabel = new JLabel("Window function:");
         windowFunctionLabel.setFont(titleFont);
         windowFunctionBox = new JComboBox(new String[]{"Hamming", "Hann"});
-        windowFunctionBox.addActionListener(new WindowFunctionBoxListener(recogMachine));
+        windowFunctionBox.addActionListener(new main.java.graphics.actionListeners.WindowFunctionBoxListener(recogMachine));
         windowFunctionBox.setPreferredSize(new Dimension(109, 23));
 
         // Window size labels
@@ -61,7 +64,7 @@ public class ControlPanel extends JPanel
         wSizeText = new JFormattedTextField(NumberFormat.getInstance());
         wSizeText.setColumns(4);
         wSizeText.setValue(8192);
-        WSizeTextFieldListener wSizeTextFieldListener = new WSizeTextFieldListener(recogMachine);
+        main.java.graphics.actionListeners.WSizeTextFieldListener wSizeTextFieldListener = new main.java.graphics.actionListeners.WSizeTextFieldListener(recogMachine);
         wSizeText.addActionListener(wSizeTextFieldListener);
         wSizeText.addFocusListener(wSizeTextFieldListener);
         wSizeText.addKeyListener(new KeyAdapter() {
@@ -79,7 +82,7 @@ public class ControlPanel extends JPanel
         thresholdText = new JFormattedTextField(NumberFormat.getInstance());
         thresholdText.setColumns(4);
         thresholdText.setValue(2100);
-        ThresholdTextFieldListener thresholdTextFieldListener = new ThresholdTextFieldListener(recogMachine);
+        main.java.graphics.actionListeners.ThresholdTextFieldListener thresholdTextFieldListener = new main.java.graphics.actionListeners.ThresholdTextFieldListener(recogMachine);
         thresholdText.addActionListener(thresholdTextFieldListener);
         thresholdText.addFocusListener(thresholdTextFieldListener);
         thresholdText.addKeyListener(new KeyAdapter() {
@@ -92,13 +95,13 @@ public class ControlPanel extends JPanel
         });
 
         // Buttons
-        btnPlayIcon = new ImageIcon(getClass().getResource("/images/play.png"), "Play button");
+        btnPlayIcon = new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("play.png"), "Play button");
         btnPlayIcon.setImage(btnPlayIcon.getImage().getScaledInstance(23, 23, 4));
-        btnStopIcon = new ImageIcon(getClass().getResource("/images/stop.png"), "Stop button");
+        btnStopIcon = new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("stop.png"), "Stop button");
         btnStopIcon.setImage(btnStopIcon.getImage().getScaledInstance(23, 23, 4));
         playBtn = new JButton("", btnPlayIcon);
         playBtn.setPreferredSize(new Dimension(30, 30));
-        playBtn.addActionListener(new PlayBtnListener(recogMachine, this));
+        playBtn.addActionListener(new main.java.graphics.actionListeners.PlayBtnListener(recogMachine, this));
         stopBtn = new JButton("", btnStopIcon);
         stopBtn.setPreferredSize(new Dimension(30, 30));
         stopBtn.addActionListener(new StopBtnListener(this));
@@ -143,7 +146,6 @@ public class ControlPanel extends JPanel
         add(playBtn);
         add(stopBtn);
     }
-
 
     public Thread getRecogMachineThread()
     {

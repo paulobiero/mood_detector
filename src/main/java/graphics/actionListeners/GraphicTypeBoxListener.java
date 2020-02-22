@@ -1,7 +1,7 @@
 package main.java.graphics.actionListeners;
 
 
-import main.java.graphics.GraphicPanel;
+import graphics.GraphicPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +18,8 @@ public class GraphicTypeBoxListener implements ActionListener
         this.graphicPanel = graphicPanel;
         this.recogParamChangesLock = recogParamChangesLock;
     }
+
+
 
 
     @Override

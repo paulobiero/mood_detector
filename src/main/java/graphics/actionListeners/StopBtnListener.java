@@ -1,7 +1,7 @@
-package main.java.graphics.actionListeners;
+package graphics.actionListeners;
 
 
-import main.java.graphics.ControlPanel;
+import graphics.ControlPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,8 +14,6 @@ public class StopBtnListener implements ActionListener
     {
         this.controlPanel = controlPanel;
     }
-
-
 
     @Override
     public void actionPerformed(ActionEvent e)

@@ -1,7 +1,8 @@
 package main.java.graphics.actionListeners;
 
-import main.java.graphics.ControlPanel;
-import main.java.processing.RecognitionMachine;
+import graphics.ControlPanel;
+import processing.RecognitionMachine;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +16,9 @@ public class PlayBtnListener implements ActionListener
         this.recogMachine = recogMachine;
         this.controlPanel = controlPanel;
     }
+
+
+
 
     @Override
     public void actionPerformed(ActionEvent e)

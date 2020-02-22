@@ -1,10 +1,9 @@
-package main.java.graphics;
+package graphics;
 
-
+import graphics.actionListeners.SaveMenuItemListener;
 import main.java.graphics.actionListeners.OpenMenuItemListener;
-import main.java.graphics.actionListeners.SaveMenuItemListener;
 import main.java.processing.NotesProvider;
-import main.java.processing.RecognitionMachine;
+import processing.RecognitionMachine;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,10 +16,10 @@ public class MainFrame extends JFrame
     private JMenuItem               openMenuItem;
     private JMenuItem               saveMenuItem;
 
-    private ControlPanel            controlPanel;
-    private GraphicPanel            graphicPanel;
+    private ControlPanel controlPanel;
+    private GraphicPanel graphicPanel;
     private GraphicTypePanel        graphicTypePanel;
-    private NotesPanel              notesPanel;
+    private NotesPanel notesPanel;
     private RecognitionMachine recogMachine;
     private final ReentrantLock     recogParamChangesLock;
 

@@ -1,4 +1,4 @@
-package main.java.graphics;
+package graphics;
 
 import main.java.graphics.actionListeners.GraphicTypeBoxListener;
 

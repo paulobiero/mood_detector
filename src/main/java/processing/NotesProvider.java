@@ -1,5 +1,7 @@
 package main.java.processing;
 
+import processing.Note;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 

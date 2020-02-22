@@ -1,6 +1,6 @@
 package main.java.graphics.actionListeners;
 
-import main.java.processing.RecognitionMachine;
+import processing.RecognitionMachine;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +17,7 @@ public class WSizeTextFieldListener implements ActionListener, FocusListener
     {
         this.recogMachine = recogMachine;
     }
+
 
 
 

@@ -1,7 +1,15 @@
-package main.java.graphics;
+package graphics;
+
+
+import info.monitorenter.gui.chart.Chart2D;
+import info.monitorenter.gui.chart.ITrace2D;
+import info.monitorenter.gui.chart.ITracePoint2D;
+import info.monitorenter.gui.chart.traces.Trace2DLtdSorted;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Iterator;
+
 
 
 public class GraphicPanel extends JPanel
@@ -62,7 +70,7 @@ public class GraphicPanel extends JPanel
     }
     public void cleanTraces2()
     {
-        Iterator<ITracePoint2D> i = trace.iterator();
+      Iterator<ITracePoint2D> i = trace.iterator();
         while (i.hasNext())
         {
             ITracePoint2D p = i.next();
@@ -110,9 +118,11 @@ public class GraphicPanel extends JPanel
     {
         if (trace != null)
             trace.removeAllPoints();
-        decibelView = flag;
+          decibelView = flag;
         updateThreshTrace(threshTraceX1, threshTraceX2, threshTraceY);
     }
 
     public void setLogBasis(double logBasis) { this.logBasis = logBasis; }
+
+
 }

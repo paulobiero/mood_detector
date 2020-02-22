@@ -1,4 +1,4 @@
-package main.java.processing;
+package processing;
 
 import java.util.LinkedList;
 

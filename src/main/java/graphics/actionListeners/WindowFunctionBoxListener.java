@@ -1,7 +1,6 @@
 package main.java.graphics.actionListeners;
 
-import main.java.processing.RecognitionMachine;
-
+import processing.RecognitionMachine;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +14,7 @@ public class WindowFunctionBoxListener implements ActionListener
     {
         this.recogMachine = recogMachine;
     }
+
 
 
 

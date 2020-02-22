@@ -1,7 +1,7 @@
 package main.java.graphics.actionListeners;
 
-import main.java.graphics.ControlPanel;
-import main.java.processing.RecognitionMachine;
+import graphics.ControlPanel;
+import processing.RecognitionMachine;
 
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
@@ -23,6 +23,7 @@ public class OpenMenuItemListener implements ActionListener
         this.controlPanel = controlPanel;
         this.saveMenuItem = saveMenuItem;
     }
+
 
 
     @Override

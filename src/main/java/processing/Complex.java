@@ -1,9 +1,9 @@
-package main.java.processing;
+package processing;
 
 public class Complex
 {
-    double x;
-    double y;
+    public double x;
+    public double y;
 
     public Complex(double x) {
         this.x = x;
